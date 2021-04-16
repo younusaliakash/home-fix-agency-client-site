@@ -1,0 +1,33 @@
+.title-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.section-title{
+    width: 450px;
+}
+.services-container{
+    margin-top: 70px;
+}
+.section-title > h1 {
+    width: 100%; 
+    text-align: center; 
+    font-weight: 900;
+    border-bottom: 2px solid #FFC107; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ }
+ 
+.section-title > h1 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+.section-title > h6{
+    color: #E84717;
+}
+
+@media only screen and (max-width: 576px) {
+    .section-title > h1{
+        font-size: 20px;
+    }
+}

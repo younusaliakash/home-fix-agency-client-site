@@ -1,0 +1,33 @@
+.top-area{
+    background-color: #222222;
+    color: rgb(189, 189, 61);
+    min-height: 40px;
+    font-size: 15px;
+}
+.address{
+    display: flex;
+    min-height: 40px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.left-side > span {
+    padding: 30px;
+}
+.top-icon{
+    margin-left: 8px;
+    margin-right: 7px;
+    color: white;
+}
+
+/* Responsive */
+/* @media only screen and (max-width: 576px) {
+    .left-side{
+        width: 100%;
+        display: inline-block;
+    }
+    .middle-side{
+        width: 100%;
+        display: inline-block;
+    }
+} */

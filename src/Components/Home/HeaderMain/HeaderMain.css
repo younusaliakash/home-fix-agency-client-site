@@ -1,0 +1,34 @@
+.carousel-container{
+    margin-top: 1px;
+}
+.caption{
+    margin-top: -520px ;
+    /* margin-left: -800px; */
+    text-align: left;
+}
+.caption > h3{
+    color: #FFC107;
+}
+.caption > h1{
+    font-size: 90px;
+    font-weight: 700;
+    color: #FFC107;
+}
+
+@media only screen and (max-width: 576px) {
+    .caption{
+        margin-top: 0;
+    }
+    .caption > h3{
+        color: #FFC107;
+        font-size: 10px;
+    }
+    .caption > h1{
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFC107;
+    }
+    .caption > .service-btn {
+        font-size: 6px;
+    }
+}

@@ -1,0 +1,24 @@
+.footer-area{
+    background-image: url("https://cdn.olscafp.org/wp-content/uploads/2013/05/23141845/footer.jpg");
+    background-size: cover;
+}
+
+.footer-area li{
+    padding-bottom: 10px;
+}
+
+.social-media .icon{
+    height: 40px;
+    width: 40px;
+    color: #E84D71;
+    border-radius: 50%;
+    border: 1px solid #E84D71;
+    padding: 10px;
+}
+.social-media .active-icon{
+    background-color: #E84D71 ;
+    color:white;
+}
+.copyRight{
+    color: #FFC107;
+}

@@ -1,0 +1,13 @@
+.nav-item{
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+    margin-right: 8px;
+    font-weight: 600;
+    text-indent: 5px;
+    /* font-family: 'Oswald', sans-serif; */
+}
+.nav-item:hover{
+    text-decoration: none;
+    color: #E74216;
+}

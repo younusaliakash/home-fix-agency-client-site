@@ -1,0 +1,33 @@
+.site-logo > img {
+    height: 100px;
+}
+.top-logo{
+    display: flex;
+}
+.second-part{
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.top-logo >.icon-box {
+    height:53px;
+    width: 53px;
+    background-color: #FFC107;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px; margin-right: 5px;
+}
+.logo-intro > h6 {
+    font-weight: 600;
+}
+.top-logo >.icon-box > .icon {
+    font-size: 55px;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 576px) {
+    .second-part{
+        display: none;
+    }
+}

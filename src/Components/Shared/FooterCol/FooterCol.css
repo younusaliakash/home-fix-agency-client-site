@@ -1,0 +1,14 @@
+.manuTitle{
+    color: #FFC107;
+    font-weight: 700;
+    font-size: 20px;
+}
+.text-item {
+    color: white;
+    font-weight: 500;
+}
+.text-item:hover {
+    color: #d3a321;
+    text-decoration: none;
+    font-weight: 580;
+}
