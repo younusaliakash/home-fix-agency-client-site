@@ -1,0 +1,67 @@
+/* .review{
+    background-image: url('../../../images/quote.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+/* .card-picture{
+    margin-top: 20px;
+} */
+.card-picture img{
+    margin: auto;
+    margin-top: 20px;
+}
+.avater{
+    margin-top: 20px !important;
+    text-align: center;
+    height: 80px !important;
+    width: 80px !important;
+    border-radius: 50% !important;
+    border: 3px solid #FFC527;
+}
+.service-title{
+    color:#FFC107;
+}
+.reviews-card{
+    border: none !important;
+}
+.body-inner {
+    margin: 20px;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    padding-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+}
+
+/* .body:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 5px 40px rgb(214, 203, 46);
+    border: none;
+} */
+.name-title{
+    font-weight: 700 !important;
+    color: brown;
+}
+.filled{
+    color: #F7C000;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .body{
+        margin: 0px;
+        margin-top: 40px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .service-description{
+        font-size: 10px;
+    }
+    .service-title{
+        font-size: 15px;
+    }
+}

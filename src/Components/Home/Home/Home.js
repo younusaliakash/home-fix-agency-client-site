@@ -4,7 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import EstimateFeatured from '../EstimateFeatured/EstimateFeatured';
 import Header from '../Header/Header';
 import RecentProjects from '../RecentProjects/RecentProjects';
-import Services from '../Services/Services';
+import Services from '../../Shared/Services/Services';
 import SuccessRating from '../SuccessRating/SuccessRating';
 import Testimonials from '../Testimonials/Testimonials';
 

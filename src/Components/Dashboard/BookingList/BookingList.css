@@ -1,0 +1,12 @@
+.card-header img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.card-header{
+    border-radius: 10px !important;
+}
+.service-card-top > h5{
+    font-weight: 600;
+    color: brown;
+}

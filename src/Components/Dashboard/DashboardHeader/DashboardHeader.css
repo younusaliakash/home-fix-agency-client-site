@@ -1,0 +1,15 @@
+.dashboard-page-header{
+    margin: 25px 5px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard-page-header-title{
+    font-weight: 700;
+}
+.dashboard-nav{
+    text-decoration: none;
+    font-weight: 600;
+    color: brown;
+    margin-right: 15px;
+}

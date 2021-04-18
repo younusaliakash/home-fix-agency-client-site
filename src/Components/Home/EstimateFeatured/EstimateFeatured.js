@@ -2,8 +2,11 @@ import React from "react";
 import "./EstimateFeatured.css";
 import estimateCover from "../../../images/estimateCover.jpg";
 import { Button, Form } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const EstimateFeatured = () => {
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data);
   return (
     <div className="container estimateFeatured">
       <div className="row">
@@ -25,19 +28,22 @@ const EstimateFeatured = () => {
             dolore hic laboriosam excepturi vel et atque unde. Quam harum porro
             cupiditate?
           </p>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group className="col" controlId="formGridEmail">
-                <Form.Control type="text" placeholder="First Name" />
+                <Form.Control type="text" placeholder="First Name" {...register("name", { required: true })}/>
+                {errors.name && <span className="text-danger">First Name is required</span> }
               </Form.Group>
 
               <Form.Group className="col" controlId="formGridPassword">
-                <Form.Control type="text" placeholder="Last Name" />
+                <Form.Control type="text" placeholder="Last Name" {...register("lastName", { required: true })}/>
+                {errors.lastName && <span className="text-danger">Last Name is required</span> }
               </Form.Group>
             </Form.Row>
 
             <Form.Group controlId="formGridAddress1">
-              <Form.Control placeholder="Email" />
+              <Form.Control placeholder="Email" {...register("email", { required: true , pattern: /\S+@\S+\.\S+/ })}/>
+              {errors.email && <span className="text-danger">Provide a valid email</span> }
             </Form.Group>
 
             <Form.Group controlId="formGridState">

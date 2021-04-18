@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import "./Reviews.css";
 
 
-const Reviews = () => {
-    
+const Reviews = (props) => {
+  // console.log(props)
+    // const [displayName] = props.reviews
   return (
     <Card className="service-card">
       <div className="body review">
@@ -17,10 +18,9 @@ const Reviews = () => {
         />
         </div>
         <Card.Body>
-          <Card.Title className="service-title">fgjh</Card.Title>
+          <Card.Title className="service-title">;flhl</Card.Title>
           <p>$fhgfhdf</p>
           <Card.Text className="service-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, obcaecati.</Card.Text>
-          <Link className="btn btn-warning get-btn" to="/">GET SERVICE</Link>
         </Card.Body>
       </div>
     </Card>
