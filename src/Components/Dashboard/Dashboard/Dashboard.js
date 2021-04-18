@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { UserContext } from '../../../App';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import Sidebar from '../Sidebar/Sidebar';
 
 const containerStyle = {
@@ -16,7 +17,12 @@ const Dashboard = () => {
                     <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-10 col-sm-12 col-12">
-                    <h1>Dashboard</h1>
+                    <DashboardHeader pageName="Dashboard"/>
+                    <div className="container">
+                        <div className="dashboard-action-area">
+                            <h1>Welcome to Dashboard</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

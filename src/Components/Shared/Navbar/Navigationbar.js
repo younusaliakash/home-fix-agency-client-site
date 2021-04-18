@@ -21,7 +21,7 @@ const Navigationbar = () => {
               <Link className="nav-item" to="/">
                 Home
               </Link>
-              <Link className="nav-item" to="/booking">
+              <Link className="nav-item" to="/dashboard">
                 Dashboard
               </Link>
               <Link className="nav-item" to="/servicesPage">

@@ -14,51 +14,70 @@ import { UserContext } from "../../../App";
 
 const Sidebar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const [isAdmin, setAdmin] = useState(false)
 
   const handleLogOut = () => {
     setLoggedInUser("")
   }
+  useEffect(() => {
+    fetch("http://localhost:5000/isAdmin", {
+      method : "POST",
+      headers : {"Content-Type" : "application/json"},
+      body: JSON.stringify({email : loggedInUser.email})
+    })
+    .then(res => res.json())
+    .then(data => setAdmin(data))
+  },[loggedInUser.email])
+
+  // console.log(isAdmin)
   return (
     <div
       className="sidebar d-flex flex-column justify-content-between py-5 px-4"
       style={{ height: "100vh" }}
     >
       <ul className="list-unstyled">
-        <li>
-          <Link to="/booking" className="text-dark">
-            <FontAwesomeIcon icon={faCalendarCheck} /> <span>Book</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/bookingList" className="text-dark">
-            <FontAwesomeIcon icon={faClipboardList} /> <span>Booking List</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/reviewForm" className="text-dark">
-            <FontAwesomeIcon icon={faStar} /> <span>Review</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/orderList" className="text-dark">
-            <FontAwesomeIcon icon={faListUl} /> <span>Order List</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/addServices" className="text-dark">
-            <FontAwesomeIcon icon={faFileAlt} /> <span>Add Services</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/makeAdmin" className="text-dark">
-            <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/manageOrders" className="text-dark">
-            <FontAwesomeIcon icon={faCog} /> <span>Manage Services</span>
-          </Link>
-        </li>
+        {
+          !isAdmin ? <div>
+          <li>
+            <Link to="/servicesPage" className="text-dark">
+              <FontAwesomeIcon icon={faCalendarCheck} /> <span>Book</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/bookingList" className="text-dark">
+              <FontAwesomeIcon icon={faClipboardList} /> <span>Booking List</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/reviewForm" className="text-dark">
+              <FontAwesomeIcon icon={faStar} /> <span>Review</span>
+            </Link>
+          </li>
+          </div> :
+          <div>
+          <li>
+            <Link to="/orderList" className="text-dark">
+              <FontAwesomeIcon icon={faListUl} /> <span>Order List</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/addServices" className="text-dark">
+              <FontAwesomeIcon icon={faFileAlt} /> <span>Add Services</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/makeAdmin" className="text-dark">
+              <FontAwesomeIcon icon={faUserPlus} /> <span>Make Admin</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/manageOrders" className="text-dark">
+              <FontAwesomeIcon icon={faCog} /> <span>Manage Services</span>
+            </Link>
+          </li>
+          </div>
+        }
+        
       </ul>
       <div>
         <Link onClick={handleLogOut} className="btn btn-default text-white">

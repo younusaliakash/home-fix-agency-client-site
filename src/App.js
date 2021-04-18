@@ -45,9 +45,9 @@ function App() {
           <Route path="/logIn">
             <LogIn/>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard/>
-          </Route>
+          </PrivateRoute>
           <Route path="/bookingList">
             <BookingList/>
           </Route>
@@ -67,9 +67,6 @@ function App() {
             <ManageOrder/>
           </Route>
           <PrivateRoute path="/booking/:_id">
-            <Booking/>
-          </PrivateRoute>
-          <PrivateRoute path="/booking">
             <Booking/>
           </PrivateRoute>
         </Switch>
