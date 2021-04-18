@@ -1,49 +1,18 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Table } from "react-bootstrap";
+import { Form, Table } from "react-bootstrap";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import Sidebar from "../Sidebar/Sidebar";
 
-const OrdersData = [
-  {
-    name: "Younus Ali Akash",
-    email: "younusaliakash8@gmail.com",
-    service: "Plumbing services",
-    payWith: "credit card",
-    status: "pending",
-  },
-  {
-    name: "Younus Ali Akash",
-    email: "younusaliakash8@gmail.com",
-    service: "Plumbing services",
-    payWith: "credit card",
-    status: "pending",
-  },
-  {
-    name: "Younus Ali Akash",
-    email: "younusaliakash8@gmail.com",
-    service: "Plumbing services",
-    payWith: "credit card",
-    status: "pending",
-  },
-  {
-    name: "Younus Ali Akash",
-    email: "younusaliakash8@gmail.com",
-    service: "Plumbing services",
-    payWith: "credit card",
-    status: "pending",
-  },
-];
-
 const OrderList = () => {
-  const [totalOrders, setTotalOrsers] = useState([])
+  const [totalOrders, setTotalOrsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/totalOrders")
-    .then(res => res.json())
-    .then(result => setTotalOrsers(result))
-  },[])
+    fetch("https://pure-ocean-97370.herokuapp.com/totalOrders")
+      .then((res) => res.json())
+      .then((result) => setTotalOrsers(result));
+  }, []);
 
   return (
     <section className="container">
@@ -55,7 +24,7 @@ const OrderList = () => {
           <DashboardHeader pageName="Order List" />
           <div className="container">
             <div className="dashboard-action-area">
-              <Table >
+              <Table>
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -66,18 +35,29 @@ const OrderList = () => {
                     <th>Status</th>
                   </tr>
                 </thead>
-                {
-                    totalOrders?.map( order => <tbody>
-                        <tr>
-                          <td>{order.bookingHolder}</td>
-                          <td>{order.email}</td>
-                          <td>{order.serviceTitle}</td>
-                          <td>${order.price}</td>
-                          <td>Credit Card</td>
-                          <td>{order.bookingStatus}</td>
-                        </tr>
-                      </tbody>)
-                }
+                {totalOrders?.map((order) => (
+                  <tbody>
+                    <tr>
+                      <td>{order.bookingHolder}</td>
+                      <td>{order.email}</td>
+                      <td>{order.serviceTitle}</td>
+                      <td>${order.price}</td>
+                      <td>Credit Card</td>
+                      {/* <td>{order.bookingStatus}</td> */}
+                      <td>
+                        <Form.Group controlId="formGridState">
+                          <Form.Control
+                            as="select"
+                          >
+                            <option value="Pending">{order.bookingStatus}</option>
+                            <option value="On-going">On-going</option>
+                            <option value="Done">Done</option>
+                          </Form.Control>
+                        </Form.Group>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
               </Table>
             </div>
           </div>

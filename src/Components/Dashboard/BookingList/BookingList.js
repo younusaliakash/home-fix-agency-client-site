@@ -10,13 +10,13 @@ import "./BookingList.css";
 
 const BookingList = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const [bookingList,setBookingList] = useState([])
+  const [bookingList, setBookingList] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookingList?email=${loggedInUser.email}`)
-    .then(response => response.json())
-    .then(data => setBookingList(data))
-  }, [loggedInUser.email])
+    fetch(`https://pure-ocean-97370.herokuapp.com/bookingList?email=${loggedInUser.email}`)
+      .then((response) => response.json())
+      .then((data) => setBookingList(data));
+  }, [loggedInUser.email]);
 
   return (
     <section className="container">
@@ -44,7 +44,9 @@ const BookingList = () => {
                           <Badge variant="info">$ {service.price}</Badge>
                         </h4>
                         <h4>
-                          <Badge variant="warning">{service.bookingStatus}</Badge>
+                          <Badge variant="warning">
+                            {service.bookingStatus}
+                          </Badge>
                         </h4>
                       </div>
                     </div>

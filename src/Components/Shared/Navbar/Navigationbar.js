@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import TopAddressBar from "../TopAddressBar/TopAddressBar";
 import TopLogoBar from "../TopLogoBar/TopLogoBar";
-import './Navigationbar.css'
+import "./Navigationbar.css";
 import { useContext } from "react";
 import { UserContext } from "../../../App";
 
 const Navigationbar = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
     <div>
       <TopAddressBar />
@@ -35,10 +35,20 @@ const Navigationbar = () => {
               </Link>
             </Nav>
             <Nav>
-              {loggedInUser.photo && <img style={{height : '35px' , width: '35px', borderRadius: '50%'}} src={loggedInUser.photo} alt=""/> }
-              {
-                loggedInUser.displayName ? <Link className="nav-item" >{loggedInUser.displayName}</Link> : <Link className="nav-item" to="/logIn">Log In</Link>
-              }
+              {loggedInUser.photo && (
+                <img
+                  style={{ height: "35px", width: "35px", borderRadius: "50%" }}
+                  src={loggedInUser.photo}
+                  alt=""
+                />
+              )}
+              {loggedInUser.displayName ? (
+                <Link className="nav-item">{loggedInUser.displayName}</Link>
+              ) : (
+                <Link className="nav-item" to="/logIn">
+                  Log In
+                </Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

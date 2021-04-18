@@ -3,7 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
-const SimplePaymentForm = ({handlePayment}) => {
+const SimplePaymentForm = ({ handlePayment }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -36,10 +36,9 @@ const SimplePaymentForm = ({handlePayment}) => {
       setPaymentsError(error.message);
       setPaymentsSuccess(null);
     } else {
-      // console.log("[PaymentMethod]", paymentMethod);
       setPaymentsSuccess(paymentMethod.id);
       setPaymentsError(null);
-      handlePayment(paymentMethod.id)
+      handlePayment(paymentMethod.id);
     }
   };
   return (

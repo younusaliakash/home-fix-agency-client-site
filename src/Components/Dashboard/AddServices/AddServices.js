@@ -8,19 +8,19 @@ const AddServices = () => {
   const [successText, setSuccessText] = useState(false);
   const [unSuccessText, setUnSuccessText] = useState(false);
   const [serviceInfo, setServiceInfo] = useState({
-    serviceTitle : "",
-    description : "",
-    price : ""
+    serviceTitle: "",
+    description: "",
+    price: "",
   });
-  const [file,setFile] = useState({})
+  const [file, setFile] = useState({});
 
   const clearForm = () => {
     setServiceInfo({
-      serviceTitle : "",
-      description : "",
-      price: ""
-    })
-  }
+      serviceTitle: "",
+      description: "",
+      price: "",
+    });
+  };
 
   const handelChange = (e) => {
     const newInfo = { ...serviceInfo };
@@ -28,34 +28,34 @@ const AddServices = () => {
     setServiceInfo(newInfo);
   };
 
-  const handleImage = e => {
-    const newFile = e.target.files[0]
-    setFile(newFile)
-  }
+  const handleImage = (e) => {
+    const newFile = e.target.files[0];
+    setFile(newFile);
+  };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
-      clearForm()
-      const formData = new FormData();
-      formData.append('file', file)
-      formData.append('serviceTitle', serviceInfo.serviceTitle)
-      formData.append('description', serviceInfo.description)
-      formData.append('price', serviceInfo.price)
+    e.preventDefault();
+    clearForm();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("serviceTitle", serviceInfo.serviceTitle);
+    formData.append("description", serviceInfo.description);
+    formData.append("price", serviceInfo.price);
 
-      fetch('http://localhost:5000/addService', {
-        method: 'POST',
-        body: formData
+    fetch("https://pure-ocean-97370.herokuapp.com/addService", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        setSuccessText(true);
+        setUnSuccessText(false);
       })
-      .then(response => {
-          setSuccessText(true)
-          setUnSuccessText(false)
-      })
-      .catch(error => {
-        setUnSuccessText(true)
-        setSuccessText(false)
-      })
-  }
-      
+      .catch((error) => {
+        setUnSuccessText(true);
+        setSuccessText(false);
+      });
+  };
+
   return (
     <section className="container">
       <div className="row">
@@ -66,13 +66,15 @@ const AddServices = () => {
           <DashboardHeader pageName="Add Services" />
           <div className="container">
             <div className="dashboard-action-area">
-            {successText && (
+              {successText && (
                 <h6 className="text-success">Service added Successful!</h6>
               )}
               {unSuccessText && (
-                <h6 className="text-danger">Error! Service added Unsuccessful</h6>
+                <h6 className="text-danger">
+                  Error! Service added Unsuccessful
+                </h6>
               )}
-              <Form onSubmit={handleSubmit} >
+              <Form onSubmit={handleSubmit}>
                 <Form.Row>
                   <Form.Group className="col" controlId="formGridEmail">
                     <Form.Label>Service Title</Form.Label>

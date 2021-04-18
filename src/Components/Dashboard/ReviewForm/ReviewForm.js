@@ -15,15 +15,15 @@ const ReviewForm = () => {
     description: "",
   });
 
-  const [loggedInUser,setLoggedInUser] = useContext(UserContext)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const formClear = () => {
     setReview({
       name: "",
       title: "",
       description: "",
-    })
-  } 
+    });
+  };
 
   const handleChange = (e) => {
     const newReview = { ...review };
@@ -32,15 +32,15 @@ const ReviewForm = () => {
   };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
-      const reviewData = {...review, ...loggedInUser}
-      formClear()
+    e.preventDefault();
+    const reviewData = { ...review, ...loggedInUser };
+    formClear();
 
-      fetch("http://localhost:5000/addReview",{
-        method : "POST",
-        headers: {"Content-Type" : "application/json" },
-        body: JSON.stringify(reviewData)
-      })
+    fetch("https://pure-ocean-97370.herokuapp.com/addReview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewData),
+    })
       .then((res) => {
         setSuccessText(true);
         setUnSuccessText(false);
@@ -49,7 +49,7 @@ const ReviewForm = () => {
         setSuccessText(false);
         setUnSuccessText(true);
       });
-  }
+  };
 
   return (
     <section className="container">
@@ -61,9 +61,7 @@ const ReviewForm = () => {
           <DashboardHeader pageName="Review" />
           <div className="container">
             <div className="dashboard-action-area">
-            {successText && (
-                <h6 className="text-success">Review added</h6>
-              )}
+              {successText && <h6 className="text-success">Review added</h6>}
               {unSuccessText && (
                 <h6 className="text-danger">Review added Unsuccessful..!</h6>
               )}

@@ -1,9 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./SuccessRating.css";
-import { faMale, faPhone, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faMale, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faStar, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 
 const SuccessRating = () => {
   return (
@@ -20,23 +20,33 @@ const SuccessRating = () => {
         <div className="row my-5">
           <div className="col-md-3">
             <div className="success-rating-counter">
-              <FontAwesomeIcon className="success-subject-icon" icon={faUsers} />
+              <FontAwesomeIcon
+                className="success-subject-icon"
+                icon={faUsers}
+              />
               <div className="success-title">
                 <h6>
                   <span>HAPPY CLIENTS</span>
                 </h6>
-                <h4><CountUp end={45} />+</h4>
+                <h4>
+                  <CountUp end={45} />+
+                </h4>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="success-rating-counter">
-              <FontAwesomeIcon className="success-subject-icon" icon={faThumbsUp} />
+              <FontAwesomeIcon
+                className="success-subject-icon"
+                icon={faThumbsUp}
+              />
               <div className="success-title">
                 <h6>
                   <span>PROJECTS COMPLETED</span>
                 </h6>
-                <h4><CountUp end={225} />+</h4>
+                <h4>
+                  <CountUp end={225} />+
+                </h4>
               </div>
             </div>
           </div>
@@ -47,7 +57,9 @@ const SuccessRating = () => {
                 <h6>
                   <span>AVERAGE RATINGS</span>
                 </h6>
-                <h4><CountUp end={4} />+</h4>
+                <h4>
+                  <CountUp end={4} />+
+                </h4>
               </div>
             </div>
           </div>
@@ -58,7 +70,9 @@ const SuccessRating = () => {
                 <h6>
                   <span>QUALIFIED STAFS</span>
                 </h6>
-                <h4><CountUp end={28} />+</h4>
+                <h4>
+                  <CountUp end={28} />+
+                </h4>
               </div>
             </div>
           </div>

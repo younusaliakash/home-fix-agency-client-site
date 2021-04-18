@@ -1,5 +1,4 @@
 import React from "react";
-import Reviews from "../Reviews/Reviews";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -10,50 +9,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Testimonials.css'
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-// const reviewsData = [
-//   {
-//     name: "Younus Ali Akash",
-//     img: "",
-//     title: "Developer",
-//     reviewsText:
-//       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, corrupti.",
-//     ratting: 5,
-//   },
-//   {
-//     name: "Younus Ali Akash",
-//     img: "",
-//     title: "Developer",
-//     reviewsText:
-//       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, corrupti.",
-//     ratting: 5,
-//   },
-//   {
-//     name: "Younus Ali Akash",
-//     img: "",
-//     title: "Developer",
-//     reviewsText:
-//       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, corrupti.",
-//     ratting: 5,
-//   },
-//   {
-//     name: "Younus Ali Akash",
-//     img: "",
-//     title: "Developer",
-//     reviewsText:
-//       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, corrupti.",
-//     ratting: 5,
-//   },
-// ];
 
 const Testimonials = () => {
   const [allReviews, setAllreviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://pure-ocean-97370.herokuapp.com/reviews")
       .then((response) => response.json())
       .then((data) => setAllreviews(data));
   }, []);
-  // console.log(allReviews);
+ 
 
   const settings = {
     dots: true,
