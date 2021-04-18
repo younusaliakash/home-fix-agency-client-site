@@ -43,7 +43,6 @@ const OrderList = () => {
                       <td>{order.serviceTitle}</td>
                       <td>${order.price}</td>
                       <td>Credit Card</td>
-                      {/* <td>{order.bookingStatus}</td> */}
                       <td>
                         <Form.Group controlId="formGridState">
                           <Form.Control
